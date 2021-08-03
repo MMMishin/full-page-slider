@@ -1,0 +1,137 @@
+// USER VARIABLES SECTION
+$accent: #F57500;
+$dark: #303030;
+$deep: #252525;
+$fontsize: 16px;
+$textcolor: #333;
+$lineheight: 1.7;
+$userfont: raleway-vh, sans-serif;
+$systemfont: -apple-system, BlinkMacSystemFont, Arial, sans-serif;
+
+
+// Bootstrap compatible gutter variable => $gutter
+// $grid-gutter-width: 30px;
+// $gutter: $grid-gutter-width;
+
+
+// IMPORT SECTION
+@import 'node_modules/bootstrap/scss/bootstrap-reboot.scss'; // Bootstrap Reboot collection
+// @import 'node_modules/bootstrap/scss/mixins/_breakpoints.scss'; // Bootstrap Breakpoints mixin
+// @import 'node_modules/bootstrap/scss/bootstrap-grid.scss' // Optional Bootstrap Grid
+// @import 'node_modules/bootstrap/scss/utilities/_sizing.scss' // Optional Bootstrap Utilites
+
+
+// FONTS LOAD SECTION
+@mixin font($fname, $fstyle, $fweight, $furl) {
+    @font-face {
+        font-family: $fname;
+		font-style: $fstyle;
+		font-weight: $fweight;
+		src: url($furl) format('woff2');
+    }
+}
+
+
+// FONTS
+@include font('oswald-vh', normal, 700, '../fonts/oswaldbold-webfont.woff2');
+@include font('oswald-vh', normal, 500, '../fonts/oswaldmedium-webfont.woff2');
+@include font('raleway-vh', normal, 800, '../fonts/ralewayextrabold-webfont.woff2');
+@include font('raleway-vh', normal, 500, '../fonts/ralewaymedium-webfont.woff2');
+@include font('raleway-vh', normal, 400, '../fonts/ralewayregular-webfont.woff2');
+@include font('raleway-vh', normal, 600, '../fonts/ralewaysemibold-webfont.woff2');
+@include font('roboto-vh', normal, 500, '../fonts/robotomedium-webfont.woff2');
+
+
+// RESPONSIVE LAYOUT
+$breakpoint-to-fluid: 992px;
+$breakpoint-to-sm: 720px;
+$base-vw: 1920px;
+$breakpoint-lg: 992px;
+$breakpoint-md: 768px;
+$breakpoint-sm: 576px;
+$container-lg: 1260px;
+$container-md: 720px;
+$container-sm: 540px;
+$p: 15px;
+
+@mixin container {
+    width: 100%;
+    max-width: $container-lg;
+    padding-left: $p;
+    padding-right: $p;
+    margin: 0 auto;
+
+    @media screen and (max-width: $breakpoint-lg) {
+        max-width: $container-md;
+    }
+
+    @media screen and (max-width: $breakpoint-md) {
+        max-width: $container-sm;
+    }
+
+    @media screen and (max-width: $breakpoint-sm) {
+        max-width: none;
+    }
+}
+
+@function strip-unit($number) {
+    @if type-of($number)=='number' and not unitless($number) {
+        @return $number / ($number * 0 + 1);
+    }
+    @return $number;
+}
+
+@function calcFluidFontSize($f-min, $f-max, $w-min, $w-max, $units: px) {
+    $f-min: strip-unit($f-min);
+    $f-max: strip-unit($f-max);
+    $w-min: strip-unit($w-min);
+    $w-max: strip-unit($w-max);
+    $k: ($f-max - $f-min)/($w-max - $w-min);
+    $b: $f-min - $k * $w-min;
+    $b: $b + $units;
+    @return calc( #{$k} * 100vw + #{$b});
+}
+
+@mixin fluid($property, $f-min, $f-max, $w-min: $breakpoint-to-fluid, $w-max: $base-vw, $fallback: false) {
+    #{$property}: $f-min;
+    @media (min-width: $w-min) {
+        @if ($fallback) {
+            #{$property}: $fallback;
+        }
+        #{$property}: calcFluidFontSize($f-min, $f-max, $w-min, $w-max, px);
+    }
+    @media (min-width: $w-max) {
+        #{$property}: $f-max;
+    }
+}
+
+
+// GENERAL DOCUMENT STYLES
+body {
+    font-family: $userfont;
+	font-size: $fontsize;
+	line-height: $lineheight;
+	color: $textcolor;
+	min-width: 320px;
+	position: relative;
+	overflow-x: hidden;
+}
+
+::placeholder {
+    color: #666;
+}
+
+::selection {
+    background-color: $accent;
+	color: #fff;
+}
+
+input, textarea {
+    outline: none;
+    &:focus:required:invalid {
+        border-color: red;
+    }
+    &:required:valid {
+        border-color: green;
+    }
+}

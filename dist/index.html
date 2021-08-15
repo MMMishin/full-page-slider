@@ -1,0 +1,221 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+
+	<meta charset="utf-8">
+	<!-- <base href="/"> -->
+
+	<title>Slider</title>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+	<link rel="icon" href="images/favicon.png">
+	<meta property="og:image" content="images/dist/preview.jpg">
+	
+	<link rel="stylesheet" href="css/main.min.css">
+
+</head>
+
+<body>
+
+<header class="header">
+
+    <div class="top-line">
+        <a href="#" class="top-line__logo">
+            <div class="top-line__logo-wrapper">
+                <img src="images/dist/logo.svg" class="top-line__logo-img" alt="Logo">
+            </div>
+            <div class="top-line__logo-text">Вездеход</div>
+        </a>
+        <div class="top-line__decoration"></div>
+        <div class="top-line__contacts">
+            <div class="top-line__phone">
+                <div class="top-line__phone-text">Телефон:</div>
+                <a href="tel:+79011774473" class="top-line__phone-number">+7 (901) 177 44 73</a>
+            </div>
+            <div class="top-line__divider"></div>
+            <div class="top-line__address">
+                <div class="top-line__address-text">Адрес:</div>
+                <div class="top-line__address-name">Москва, пер. Лучников 7/4</div>
+            </div>
+        </div>
+        <div class="top-line__decoration"></div>
+        <div class="top-line__menu">
+            <a href="#" class="top-line__menu-button">
+                <div class="top-line__menu-burger">
+                    <div class="top-line__menu-strip"></div>
+                    <div class="top-line__menu-strip"></div>
+                    <div class="top-line__menu-strip"></div>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <nav class="nav">
+        <ul class="nav__menu">
+            <li class="nav__menu-item">
+                <a href="#" class="nav__menu-link">Главная</a>
+            </li>
+            <li class="nav__menu-item">
+                <a href="#" class="nav__menu-link">Автопарк</a>
+            </li>
+            <li class="nav__menu-item">
+                <a href="#" class="nav__menu-link">Блог</a>
+            </li>
+            <li class="nav__menu-item">
+                <a href="#" class="nav__menu-link">Отзывы</a>
+            </li>
+            <li class="nav__menu-item">
+                <a href="#" class="nav__menu-link">Контакты</a>
+            </li>
+            <li class="nav__menu-item">
+                <a href="#" class="nav__menu-link">О нас</a>
+            </li>
+        </ul>
+        <div class="nav__social">
+            <a href="#" class="nav__social-item">
+                <img class="nav__social-img" src="images/dist/soc/instagram-brands.svg" alt="Instagram">
+            </a>
+            <a href="#" class="nav__social-item">
+                <img class="nav__social-img" src="images/dist/soc/facebook-f-brands.svg" alt="Facebook">
+            </a>
+            <a href="#" class="nav__social-item">
+                <img class="nav__social-img" src="images/dist/soc/vk-brands.svg" alt="Vk">
+            </a>
+            <a href="#" class="nav__social-item">
+                <img class="nav__social-img" src="images/dist/soc/twitter-brands.svg" alt="Twitter">
+            </a>
+        </div>
+    </nav>
+
+    <div class="overlay"></div>
+
+    <div class="left-sidebar">
+        <div class="left-sidebar__decoration"></div>
+        <div class="left-sidebar__social">
+            <a href="#" class="left-sidebar__social-item">
+                <img class="left-sidebar__social-img" src="images/dist/soc/instagram-brands.svg" alt="Instagram">
+            </a>
+            <a href="#" class="left-sidebar__social-item">
+                <img class="left-sidebar__social-img" src="images/dist/soc/facebook-f-brands.svg" alt="Facebook">
+            </a>
+            <a href="#" class="left-sidebar__social-item">
+                <img class="left-sidebar__social-img" src="images/dist/soc/vk-brands.svg" alt="Vk">
+            </a>
+            <a href="#" class="left-sidebar__social-item">
+                <img class="left-sidebar__social-img" src="images/dist/soc/twitter-brands.svg" alt="Twitter">
+            </a>
+        </div>
+        <div class="left-sidebar__decoration left-sidebar__decoration--second"></div>
+    </div>
+
+    <div class="slider-container">
+
+        <div class="slider-text">
+            <div class="slider-text__wrapper swiper-wrapper">
+                <div class="slider-text__slide swiper-slide">
+                    <div class="slider-text__content">
+                        <h2 class="slider-text__heading">
+                            Подбор внедорожника <span>на любой</span> случай
+                        </h2>
+                        <p class="slider-text__descr">
+                            Выберем и подберём для вас любой внедорожник в кратчайшие сроки, с учётом всех ваших пожеланий и всех необходимых потребностей.
+                        </p>
+                        <button data-micromodal-open="modal-1" class="button slider-text__button"> <span>Оставить заявку</span></button>
+                    </div>
+                </div>
+                <div class="slider-text__slide swiper-slide">
+                    <div class="slider-text__content">
+                        <h2 class="slider-text__heading">
+                            Индивидуальный подход <span>к каждому</span> клиенту
+                        </h2>
+                        <p class="slider-text__descr">
+                            Все автомобили мы подбираем индивидуально для каждого клиента или покупателя и с трепетом относимся к результату нашей работы.
+                        </p>
+                        <button data-micromodal-open="modal-1" class="button slider-text__button"> <span>Оставить заявку</span></button>
+                    </div>
+                </div>
+                <div class="slider-text__slide swiper-slide">
+                    <div class="slider-text__content">
+                        <h2 class="slider-text__heading">
+                            Выбор лучшей модели <span>из модельного</span> ряда
+                        </h2>
+                        <p class="slider-text__descr">
+                            В нашем модельном ряду имеются модели сотен различных внедорожников, которые удовлетворят даже самого требовательного клиента.
+                        </p>
+                        <button data-micromodal-open="modal-1" class="button slider-text__button"> <span>Оставить заявку</span></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="slider-img">
+            <div class="slider-img__wrapper swiper-wrapper">
+                <div class="slider-img__slide swiper-slide">
+                    <div class="slider-img__bg" data-swiper-parallax="40%" style="background-image: url('images/dist/slide-images/1.jpg');"></div>
+                </div>
+                <div class="slider-img__slide swiper-slide">
+                    <div class="slider-img__bg" data-swiper-parallax="40%" style="background-image: url('images/dist/slide-images/2.jpg');"></div>
+                </div>
+                <div class="slider-img__slide swiper-slide">
+                    <div class="slider-img__bg" data-swiper-parallax="40%" style="background-image: url('images/dist/slide-images/3.jpg');"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="slider-control">
+            <div class="slider-pagination">
+                <div class="swiper-pagination"></div>
+            </div>
+            <div class="slider-scrollbar">
+                <div class="swiper-scrollbar"></div>
+            </div>
+            <div class="slider-navigation">
+                <div class="slider-navigation__buttons-wrapper">
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="slider-count">
+            <span class="slider-count__current">01</span> / <span class="slider-count__total"></span>
+        </div>
+
+        <div class="slider-current">
+            <span class="slider-current__num">01</span><span class="slider-current__dot">.</span>
+        </div>
+
+        <div class="slider-gear"></div>
+
+    </div>
+
+</header>
+
+<div class="modal micromodal-slide" id="modal-1" aria-hidden="true">
+    <div class="modal__overlay" tabindex="-1" data-micromodal-close>
+        <div class="modal__container" role="dialog" aria-modal="true" aria-labelledby="modal-1-title">
+            <header class="modal__header">
+                <h2 class="modal__title" id="modal-1-title">Оставить заявку</h2>
+                <button class="modal__close" aria-label="Закрыть окно" data-micromodal-close></button>
+            </header>
+
+            <form action="#">
+                <main class="modal-content">
+                    <input type="text" name="VH-name" placeholder="Ваше имя..." class="form-input modal__input">
+                    <input type="text" name="VH-name" placeholder="Ваш телефон..." class="form-input modal__input">
+                    <textarea class="form-input modal__input" name="message" placeholder="Сообщение..."></textarea>
+                </main>
+                <footer class="modal__footer">
+                    <button class="button"><span>Отправить</span></button>
+                </footer>
+            </form>
+        </div>
+    </div>
+</div>
+	<script src="js/app.min.js"></script>
+
+</body>
+</html>
